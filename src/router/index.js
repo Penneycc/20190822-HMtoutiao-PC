@@ -7,6 +7,8 @@ import Home from '@/views/home'
 
 // 二级子路由
 import Welcome from '@/views/welcome'
+import Article from '@/views/article'
+import Image from '@/views/image'
 
 Vue.use(VueRouter)
 
@@ -17,7 +19,9 @@ const router = new VueRouter({
       path: '/',
       component: Home,
       children: [
-        { path: '/', name: 'welcome', component: Welcome }
+        { path: '/', name: 'welcome', component: Welcome },
+        { path: '/article', name: 'article', component: Article },
+        { path: '/image', name: 'image', component: Image }
       ]
     }
   ]

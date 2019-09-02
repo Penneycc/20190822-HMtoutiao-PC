@@ -11,6 +11,7 @@
           active-text-color="#ffd04b"
           :collapse="iscollapse"
           :collapse-transition="false"
+          router
         >
           <el-menu-item index="/">
             <i class="el-icon-s-home"></i>
@@ -54,8 +55,8 @@
               <i class="el-icon-arrow-down el-icon--right"></i>
             </span>
             <el-dropdown-menu slot="dropdown">
-              <el-dropdown-item command="setting">个人设置</el-dropdown-item>
-              <el-dropdown-item command="logout">退出登陆</el-dropdown-item>
+              <el-dropdown-item icon="el-icon-setting" command="setting">个人设置</el-dropdown-item>
+              <el-dropdown-item icon="el-icon-unlock" command="logout">退出登陆</el-dropdown-item>
             </el-dropdown-menu>
           </el-dropdown>
         </el-header>
@@ -74,7 +75,7 @@ export default {
   created () {
     const user = store.getUser()
     this.name = user.name
-    this.phtot = user.photo
+    this.photo = user.photo
   },
   data () {
     return {
@@ -133,9 +134,11 @@ export default {
     }
     .el-dropdown {
       float: right;
-      img {
+      .avatar {
+        display: inline-block;
         vertical-align: middle;
-        width: 36px;
+        width: 30px;
+        height: 30px;
       }
     }
   }
